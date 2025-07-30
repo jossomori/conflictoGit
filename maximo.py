@@ -35,4 +35,7 @@ def maximo(lista):
     # Una vez terminemos de ordenar,
     # El valor máximo será el último elemento de la lista.
 
-    return lista[largo_lista - 1]
+    valor_maximo = lista[largo_lista - 1]
+
+    # Acomodando un poco la salida si es entero.
+    return int(valor_maximo) if valor_maximo.is_integer() else valor_maximo
