@@ -2,6 +2,7 @@
 # devuelve el máximo valor en una lista dada
 def maximo(lista):
     largo_lista = len(lista)
+    print(f"\nLargo de lista: {largo_lista}")
 
     """ 
     ## Repasando bubble-sort
@@ -23,19 +24,26 @@ def maximo(lista):
     devuelve: [3,4,7]
 
     """
-    # Primero ordeno la lista:
+    if largo_lista == 0:
+        print(f"=> La lista está vacía.\n")   
+        return 0
     
-    # Recorremos la lista
-    for i in range(largo_lista):
-        for j in range(0, largo_lista-i-1):
+    else:
+        print(f"=> La lista no está vacía.\n")  
+        # Primero ordeno la lista:
+        
+        # Recorremos la lista y ordenamos usando bubble-sort.
+        # No es eficiente, pero es para entender python.
+        for i in range(largo_lista):
+            for j in range(0, largo_lista-i-1):
 
-            if lista[j] > lista[j+1]:
-                lista[j], lista[j+1] = lista[j+1], lista[j]
+                if lista[j] > lista[j+1]:
+                    lista[j], lista[j+1] = lista[j+1], lista[j]
 
-    # Una vez terminemos de ordenar,
-    # El valor máximo será el último elemento de la lista.
+        # Una vez terminemos de ordenar,
+        # El valor máximo será el último elemento de la lista.
 
-    valor_maximo = lista[largo_lista - 1]
+        valor_maximo = lista[largo_lista - 1]
 
-    # Acomodando un poco la salida si es entero.
-    return int(valor_maximo) if valor_maximo.is_integer() else valor_maximo
+        # Acomodando un poco la salida si es entero.
+        return int(valor_maximo) if valor_maximo.is_integer() else valor_maximo
